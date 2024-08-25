@@ -3,13 +3,12 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.12  # Specify the Python version
-      docker: 20    # Specify the Docker version
+      python: 3.12  
+      docker: 20    
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
-      - pip install poetry==1.8.0  # Install a specific version of Poetry
-
+      - pip install poetry==1.8.0  
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
