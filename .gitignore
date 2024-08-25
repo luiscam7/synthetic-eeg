@@ -1,0 +1,153 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment directories
+env/
+venv/
+.venv/
+
+# Installers
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Test result files
+*.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+coverage.xml
+*.cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Jupyter Notebook files
+.ipynb_checkpoints
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jinja compiled templates
+*.jinja2cache/
+
+# dotenv
+.env
+.env.*
+
+# PyCharm/JetBrains IDE
+.idea/
+*.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# MacOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Python-specific cache files
+*.cache
+*.pkl
+
+# Frontend build directories and dependency files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Frontend build artifacts
+/static/
+static/
+*.min.js
+*.min.css
+
+# HTMX-related files (if any custom HTMX build processes are used)
+.htmx/
+
+# Logs and error reporting
+*.log
+*.out
+*.err
+logs/
+error.log
+*.pid
+
+# Lock files
+*.lock
+
+# Editors and IDEs
+*~
+*.swp
+*.swo
+.project
+*.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Documentation / Design
+*.pdf
+*.docx
+*.pptx
+*.dotx
+
+# Distribution / Packaging
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# Configurations generated during development
+config/settings_local.py
