@@ -3,29 +3,26 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.12  
-      docker: 20    
+      python: 3.12  # Only specify Python version
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
-      - pip install poetry==1.8.0  
+      - pip install poetry==1.8.0  # Install the specific version of Poetry
+
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - echo Building the Docker image...
-      - docker build -t synthetic-eeg-app .
+      - docker buildx build --platform=linux/amd64 -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/synthetic-eeg-app:latest --push .
 
   build:
     commands:
-      - echo Tagging the Docker image...
-      - docker tag synthetic-eeg-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/synthetic-eeg-app:latest
-      - echo Pushing the Docker image to ECR...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/synthetic-eeg-app:latest
+      - echo Build and push completed successfully.
 
   post_build:
     commands:
-      - echo Build completed successfully
+      - echo Build process completed.
 
 artifacts:
   files:
