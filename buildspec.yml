@@ -4,7 +4,6 @@ phases:
   install:
     runtime-versions:
       python: 3.12  
-      docker: 20    
     commands:
       - echo Installing dependencies...
       - pip install --upgrade pip
