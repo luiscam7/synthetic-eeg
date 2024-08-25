@@ -9,6 +9,10 @@ from synthetic_eeg import SyntheticEEG
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Simulated EEG Application!"}
+
 
 @app.get("/eeg/", response_model=EEGData)
 async def retrieve_eeg_data() -> EEGData:
