@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from models import EEGData
 from synthetic_eeg import SyntheticEEG
+import json
 
 app = FastAPI()
 
@@ -21,6 +22,10 @@ def read_root():
 
 @app.get("/eeg/", response_model=EEGData)
 async def retrieve_eeg_data() -> EEGData:
-    eeg_writer = SyntheticEEG(n_seconds=600, fs=100)
-    eeg_writer.generate_synthetic_eeg()
-    return eeg_writer.df.to_dict(orient="list")
+    # eeg_writer = SyntheticEEG(n_seconds=600, fs=100)
+    # eeg_writer.generate_synthetic_eeg()
+    #return eeg_writer.df.to_dict(orient="list")
+    with open("output.json", "r") as f:
+        data = json.load(f)
+
+    return data
